@@ -7,10 +7,10 @@ from flask import Flask, render_template, request
 import statistics
 app = Flask(__name__)
 
-lgbm_regressor = joblib.load('model/model.pkl')  # Load pre-trained model
+lgbm_regressor = joblib.load('model.pkl')  # Load pre-trained model
 
 # Read the atomic radius and other element-related data
-df_atomic_radius = pd.read_csv('data/allfeatures final.csv', index_col='symbol')
+df_atomic_radius = pd.read_csv('allfeatures final.csv', index_col='symbol')
 df = pd.read_csv('data/allfeatures final.csv')  # Update with our correct CSV file path
 
 # Function to extract elements and their values from a chemical formula
@@ -75,7 +75,7 @@ def extract_element_values(material):
     return element_values
 
 # Read the thermal conductivity values from the thermal conductivity file
-thermal_conductivity_df = pd.read_csv('data/allfeatures final.csv')
+thermal_conductivity_df = pd.read_csv('allfeatures final.csv')
 
 # Create a dictionary from the thermal conductivity data
 thermal_conductivity_values = dict(zip(thermal_conductivity_df['symbol'],
