@@ -17,5 +17,4 @@ six==1.16.0
 threadpoolctl==3.2.0
 tzdata==2023.3
 Werkzeug==3.0.1
-xgboost==2.0.2
 gunicorn==23.0.0
